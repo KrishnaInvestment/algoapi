@@ -26,8 +26,6 @@ fx = FXCMClient(USER_ID = 'YOUR_ID',
                 URL = 'http://www.fxcorporate.com/Hosts.jsp',
                 CONNECTION = 'Demo').login()
 
-[You can check the meaning of the input mention above](https://fxcodebase.com/bin/forexconnect/1.6.0/python/forexconnect.ForexConnect.ForexConnect.login.html)
-
 #You can add all the parameters of login mentioned above as per the requirements
 
 #to avoid entering the information each time maintain .env with variables
@@ -37,6 +35,9 @@ URL = 'http://www.fxcorporate.com/Hosts.jsp'
 CONNECTION = 'Real'
 
 ```
+
+[You can check the meaning of the inputs of login](https://fxcodebase.com/bin/forexconnect/1.6.0/python/forexconnect.ForexConnect.ForexConnect.login.html)
+
 # Executing a trade
 ```python
 from algoapi.fxconnect.trade import OpenPosition
@@ -44,13 +45,14 @@ from algoapi.fxconnect.trade import OpenPosition
 
 #Trading at entry price
 op = OpenPosition(fx)
-order_id = op.at_entry_price(INSTRUMENT="EUR/USD",
-                                    TRANSACTION_TYPE='B',
-                                    LOTS=1,
-                                    RATE = rate,
-                                    RATE_STOP= 40,
-                                    TRAIL_STEP = 30,
-                                    RATE_LIMIT = 30
+order_id = op.at_entry_price(
+                            INSTRUMENT="EUR/USD",
+                            TRANSACTION_TYPE='B',
+                            LOTS=1,
+                            RATE = rate,
+                            RATE_STOP= 40,
+                            TRAIL_STEP = 30,
+                            RATE_LIMIT = 30
                                     )
 #At entry price the rate must be added and stop/target are based on the pip value
 #Instrument, TRANSACTION_TYPE, LOTS, RATE are required variable for executing entry trade
@@ -59,12 +61,12 @@ order_id = op.at_entry_price(INSTRUMENT="EUR/USD",
 
 
 #Trading at market price
-trade_id, order_id = op.at_market_price(INSTRUMENT="EUR/USD",
+trade_id, order_id = op.at_market_price(
+                                    INSTRUMENT="EUR/USD",
                                     TRANSACTION_TYPE='B',
                                     LOTS=1
                                     )
-# You can add stop loss , limit , trail_step as per the requirement 
-# 
+# You can add stop loss , limit , trail_step as per the requirement
 ```
 
 ## Contributing
