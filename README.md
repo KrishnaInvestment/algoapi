@@ -21,10 +21,12 @@ pip install algoapi
 from algoapi.fxconnect import FXCMClient
 
 # Login to the API
-fx = FXCMClient(USER_ID = 'YOUR_ID',
-                USER_PASSWORD = 'YOUR_PASSWORD', 
-                URL = 'http://www.fxcorporate.com/Hosts.jsp',
-                CONNECTION = 'Demo').login()
+fx = FXCMClient(
+    USER_ID="YOUR_ID",
+    USER_PASSWORD="YOUR_PASSWORD",
+    URL="http://www.fxcorporate.com/Hosts.jsp",
+    CONNECTION="Demo",
+).login()
 
 #You can add all the parameters of login mentioned above as per the requirements
 
@@ -46,14 +48,14 @@ from algoapi.fxconnect.trade import OpenPosition
 #Trading at entry price
 op = OpenPosition(fx)
 order_id = op.at_entry_price(
-                            INSTRUMENT="EUR/USD",
-                            TRANSACTION_TYPE='B',
-                            LOTS=1,
-                            RATE = rate,
-                            RATE_STOP= 40,
-                            TRAIL_STEP = 30,
-                            RATE_LIMIT = 30
-                                    )
+    INSTRUMENT="EUR/USD",
+    TRANSACTION_TYPE="B",
+    LOTS=1,
+    RATE=rate,
+    RATE_STOP=40,
+    TRAIL_STEP=30,
+    RATE_LIMIT=30,
+)
 #At entry price the rate must be added and stop/target are based on the pip value
 #Instrument, TRANSACTION_TYPE, LOTS, RATE are required variable for executing entry trade
 #However other variable are optional
@@ -62,10 +64,9 @@ order_id = op.at_entry_price(
 
 #Trading at market price
 trade_id, order_id = op.at_market_price(
-                                    INSTRUMENT="EUR/USD",
-                                    TRANSACTION_TYPE='B',
-                                    LOTS=1
-                                    )
+    INSTRUMENT="EUR/USD", TRANSACTION_TYPE="B", LOTS=1
+)
+
 # You can add stop loss , limit , trail_step as per the requirement
 ```
 
