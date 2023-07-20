@@ -1,1 +1,2 @@
-from algoapi.fxconnect.trade.create_position.position import OpenPosition, ClosePosition
+from algoapi.fxconnect.trade.position import OpenPosition, ClosePosition, UpdatePosition
+from algoapi.fxconnect.trade.delete_order import DeleteOrder
