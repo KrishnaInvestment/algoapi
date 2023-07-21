@@ -54,7 +54,7 @@ order_id = op.at_entry_price(
     LOTS=1,
     RATE=rate,
     RATE_STOP=40,
-    TRAIL_STEP=30,
+    TRAIL_STEP_STOP=30,
     RATE_LIMIT=30,
 )
 #At entry price the rate must be added and stop/target are based on the pip value
@@ -68,7 +68,7 @@ trade_id, order_id = op.at_market_price(
     INSTRUMENT="EUR/USD", TRANSACTION_TYPE="B", LOTS=1
 )
 
-# You can add stop loss , limit , trail_step as per the requirement
+# You can add stop loss , limit , trail_step_stop as per the requirement
 ```
 # Closing a Trade
 ```python
