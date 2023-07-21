@@ -97,14 +97,14 @@ class UpdatePosition(FXCMClient):
         super().__init__()
         self.fx = fx
 
-    def update_limit_price(self, limit_price, trade_id, trail_step=None):
+    def update_limit_price(self, limit_price, trade_id):
         trade_table = self.fx.get_table(ForexConnect.TRADES)
         trade = trade_table.get_rows_by_column_value("trade_id", trade_id)
         if not bool(list(trade)):
             raise TradeNotFound(f"No trades with the trade id {trade_id} found")
 
         trade = list(trade)[0]
-        order_input = PositionUtils().make_order_input_limit(trade, limit_price, trail_step)
+        order_input = PositionUtils().make_order_input_limit(trade, limit_price)
         trade_id = PositionUtils().execute_edit_trade(self.fx, order_input)
         return trade_id
 

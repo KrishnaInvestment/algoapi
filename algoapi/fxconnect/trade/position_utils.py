@@ -260,7 +260,7 @@ class PositionUtils:
 
         return kwargs_dict
 
-    def make_order_input_limit(self, trade, limit_price, trail_step=None):
+    def make_order_input_limit(self, trade, limit_price):
 
         if self.is_number(limit_price):
             kwargs_dict = {
@@ -278,8 +278,6 @@ class PositionUtils:
                 kwargs_dict["BUY_SELL"] = OPP_BUY_SELL_MAP.get(trade.buy_sell)
                 kwargs_dict["AMOUNT"] = trade.amount
 
-            if self.is_number(trail_step):
-                kwargs_dict["TRAIL_STEP"] = trail_step
             return kwargs_dict
         else:
             raise ValueError(f"Limit price {limit_price} is not a number")
