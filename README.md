@@ -39,7 +39,7 @@ CONNECTION = 'Real'
 
 ```
 
-[You can check the meaning of the inputs of login](https://fxcodebase.com/bin/forexconnect/1.6.0/python/forexconnect.ForexConnect.ForexConnect.login.html)
+[You can check other inputs for login](https://fxcodebase.com/bin/forexconnect/1.6.0/python/forexconnect.ForexConnect.ForexConnect.login.html)
 
 # Executing a trade
 ```python
